@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Blog list</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body style="background-color:#98FB98;" >
+
+{% block content %}
+
+{% include 'includes/nav_bar.html' %}
+  
+  {% for post in object_list %}
+    <h5>{{post.date|date:"Y-m-d" }}<a href="/blog/blog-list/{{post.id}}" > {{post.title}} </a> </h5>
+  
+  {% endfor %}
+
+
+
+{% endblock %}
+
+
+</body>
+</html>
